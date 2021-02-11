@@ -22,3 +22,13 @@ replica-read-only yes #配置从节点只读
 
 ## lua脚本
 eval
+
+## 哨兵架构
+
+cp sentinel.conf sentinel-26379.conf
+
+prot 26379
+daemonize yes
+pidfile "/var/run/redis-sentinel-26379.pid"
+logfile "26379.log"
+dir "/usr/local/redis-5.0.3/data"
