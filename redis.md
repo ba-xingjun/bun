@@ -1,5 +1,10 @@
 # bun
 
+## 环境搭建
+
+protected-mode no #关闭保护模式，开启的话，只有本机才可以访问redis
+#bind 127.0.0.1（bind绑定的是自己的机器网卡ip，如果有多块网卡可以配多个ip，代表允许客户端通过机器的那些网卡ip去访问）
+
 ## RDB快照
 save Redis将内存数据快照保存在名字为dump.rdb的二进制文件中。 #save 60 1000
 bgsave 
