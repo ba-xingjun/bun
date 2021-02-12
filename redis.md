@@ -39,3 +39,4 @@ logfile "26379.log"
 dir "/usr/local/redis-5.0.3/data"
 
 sentinel monitor mymaster 192.168.0.60 6379 2
+## 集群搭建部署
