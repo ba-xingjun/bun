@@ -13,6 +13,7 @@ appendfsync always: appendfsync everysec: appendfsynv no:
 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb bgrewriteaof重写AOF
 ## rdb aop混合持久化
 aof-use-rdb-preamble yes
+## redis管道
 
 ## 主从复制
 主从风暴
@@ -40,3 +41,5 @@ dir "/usr/local/redis-5.0.3/data"
 
 sentinel monitor mymaster 192.168.0.60 6379 2
 ## 集群搭建部署
+master 选举
+脑裂问题
