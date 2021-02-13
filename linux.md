@@ -1,4 +1,6 @@
 # linux
+mv rm -r  vi
+
 安装rpm:sudo apt install rpm
 
 安装yum: sudo apt install yum
