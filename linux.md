@@ -15,4 +15,7 @@ sudo wget http://download.redis.io/releases/redis-5.0.3.tar.gz
 tar xzf redis‐5.0.3.tar.gz
 
 进入到解压好的redis‐5.0.3目录下，进行编译与安装
-make
+
+生成:sudo make失败则 使用 sudo make MALLOC=libc后再sudo make
+
+测试 sudo make test 这段运行时间会较长
