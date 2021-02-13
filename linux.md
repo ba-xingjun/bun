@@ -3,3 +3,4 @@
 
 安装rpm:sudo apt install rpm
 
+sudo apt-get install build-essential
