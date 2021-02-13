@@ -9,6 +9,10 @@ sudo apt-get update
 
 sudo apt install sl
 
-wget http://download.redis.io/releases/redis‐5.0.3.tar.gz
+
+sudo wget http://download.redis.io/releases/redis-5.0.3.tar.gz 
 
 tar xzf redis‐5.0.3.tar.gz
+
+进入到解压好的redis‐5.0.3目录下，进行编译与安装
+make
