@@ -1,5 +1,5 @@
 # linux
-mv rm -r  vi
+mv rm -r  vi cp
 
 安装rpm:sudo apt install rpm
 
