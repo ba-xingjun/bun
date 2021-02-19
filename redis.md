@@ -24,6 +24,7 @@ aof-use-rdb-preamble yes
 
 ## 主从复制
 主从风暴
+
 port 6380
 
 pidfile /var/run/redis_6380.pid # 把pid进程号写入pidfile配置的文件
