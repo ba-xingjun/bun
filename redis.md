@@ -62,5 +62,35 @@ dir "/usr/local/redis-5.0.3/data"
 sentinel monitor mymaster 192.168.0.60 6379 2
 
 ## 集群搭建部署
-master 选举
+
+  (1)daemonize 
+  
+ （2）port 8001（分别对每个机器的端口号进行设置）
+ 
+ （3）pidfile /var/run/redis_8001.pid # 把pid进程号写入pidfile配置的文件
+ 
+ （4）dir /usr/local/redis‐cluster/8001/（指定数据文件存放位置，必须要指定不同的目录位置，不然会
+丢失数据）
+
+ （5）cluster‐enabled yes（启动集群模式）
+ 
+ （6）cluster‐config‐file nodes‐8001.conf（集群节点信息文件，这里800x最好和port对应上）
+ 
+ （7）cluster‐node‐timeout 10000
+ 
+  (8)# bind 127.0.0.1（bind绑定的是自己机器网卡的ip，如果有多块网卡可以配多个ip，代表允许客户端通
+过机器的哪些网卡ip去访问，内网一般可以不配置bind，注释掉即可）
+
+  (9)protected‐mode no （关闭保护模式）
+  
+  (10)appendonly 
+  
+  如果要设置密码需要增加如下配置
+  
+  (11)requirepass bun (设置redis访问密码)
+  
+  (12)masterauth bun (设置集群节点间访问密码，跟上面一致)
+master 
+
 脑裂问题
+
