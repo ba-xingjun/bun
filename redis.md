@@ -90,7 +90,12 @@ sentinel monitor mymaster 192.168.0.60 6379 2
   (11)requirepass bun (设置redis访问密码)
   
   (12)masterauth bun (设置集群节点间访问密码，跟上面一致)
-master 
 
-脑裂问题
+网络抖动:cluster-node-timeout
+
+脑裂问题:min-replicas-to-write
+
+集群是否完整才对外提供服务:cluster-require-full-coverage no 
+
+延迟计算公司:delay=500ms+random(0~500ms)+slave_rank*1000ms
 
