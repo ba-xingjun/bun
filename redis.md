@@ -99,3 +99,19 @@ sentinel monitor mymaster 192.168.0.60 6379 2
 
 延迟计算公司:delay=500ms+random(0~500ms)+slave_rank*1000ms
 
+redis-cli -a bun --cluster create --cluster-replicas 1 host:port
+
+redis-cli -a bun -h -p
+
+redis‐cli ‐a bun ‐‐cluster add‐node 192.168.0.61:8007 192.168.0.61:8001
+
+redis‐cli ‐a bun ‐‐cluster reshard 192.168.0.61:8001
+
+添加从节点 cluster replicate 2728a594a0498e98e4b83a537e19f9a0a3790f38
+
+删除从节点 redis‐cli ‐a bun ‐‐cluster del‐node 192.168.0.61:8008 a1cfe35722d151cf70585cee212755653
+
+删除主节点 rehard分片 redis‐cli ‐a bun ‐‐cluster reshard 192.168.0.61:8007
+
+
+
