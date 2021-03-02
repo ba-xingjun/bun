@@ -113,5 +113,18 @@ redis‐cli ‐a bun ‐‐cluster reshard 192.168.0.61:8001
 
 删除主节点 rehard分片 redis‐cli ‐a bun ‐‐cluster reshard 192.168.0.61:8007
 
+#数据结构
+string字符串:sdshdr5 sdshdr8 sdshdr16 sdshdr32 sdshdr64
+
+list  quicklist(双端列表) zipilist list-max-ziplist-size -2 最大为8kb，超过时将新建 list-compress-depth 1 0 代表所有不压缩 1 代表往后
+
+hash 数据结果底层实现为一个字典(dict),当数据量比较小时，或者单个元素比较小时，底层用ziplist 存储hash-max-ziplist-entries 512 hash-max-ziplist-value 64 之一超过将改为hashtable编码
+
+set 为无序的，自动去重的数据类型,底层结构实现一个value为null的字典(dict)，当可以用整数表达是，结果为intset。两个条件任意满足时
+Set将用hashtable存储数据。1， 元素个数大于 set-max-intset-entries , 2 ， 元素无法用整形表示 
+
+zset 为有序的,自动去重的数据类型 字典dict+跳表(skiplist),当数据比较小时,用ziplist.
+
+
 
 
